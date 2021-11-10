@@ -1,0 +1,15 @@
+class Time12{
+    private int hours;
+    private int min;
+
+    public void setTime(int h, int m){
+	hours = h;
+	min = m;
+    }
+
+    public void getTime(){
+	
+    }
+
+    }
+}
