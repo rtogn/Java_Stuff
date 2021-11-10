@@ -1,0 +1,283 @@
+//4.1)
+import java.util.*;
+class quads{
+   public static void main(String[] args){
+      Scanner c = new Scanner(System.in);
+      System.out.println("Enter X: ");
+      int x = c.nextInt();
+      System.out.println("Enter Y: ");
+      int y = c.nextInt();
+      System.out.println(quadrant(x, y)); 
+   }
+   public static int quadrant(int x, int y){
+      
+      if (x > 0 && y > 0)
+         return(1);
+      else if (x < 0 && y > 0)
+         return(2);
+      else if (x < 0 && y < 0)
+         return(3);
+      else if (x > 0 && y < 0)
+         return(4);
+      else
+         return(0);
+   }
+}
+
+//4.2)
+class countFactors{
+   public static void main(String[] args){
+      System.out.println(countFactors(5));
+   }
+   public static int countFactors(int x){
+      int count = 0;
+      for (int i = 1; i <= x; i++){
+         if (x % i == 0)
+            count++;
+      }
+      return count;
+   }
+}
+//4.3
+import java.util.*;
+class Colors{
+   public static void main(String[] args){
+      Scanner c = new Scanner(System.in);
+      System.out.println("Enter your color leter: ");
+      String color = c.next();
+      
+      if (color.equalsIgnoreCase("B"))
+         System.out.println("Color is Blue!");
+      else if (color.equalsIgnoreCase("G"))
+         System.out.println("Color is Green!");
+      else if (color.equalsIgnoreCase("R"))
+         System.out.println("Color is Red!");
+      else
+         System.out.println("That is not an available color!");
+   }
+}
+
+//4.4
+class PrintRange{
+   public static void main(String[] args){
+      printRange('a', 'z');
+   }
+   public static void printRange(char start, char fin){
+      System.out.print(start);
+      for (int i = start; i < fin; i++){
+         System.out.print(", " + (char)(i + 1));
+      }
+   }
+}
+
+//4.5
+class Powers{
+   public static void main(String[] args){
+      System.out.println(pow(2,1));
+   }
+   public static int pow(int base, int exp){
+      int result = base;
+      for(int i = 1; i < exp; i++)
+         result = result * base;
+      return result;
+   }
+}
+
+//4.6
+class PrintNumRange{
+   public static void main(String[] args){
+      printRange(9, 2);
+      System.out.println();
+      printRange(2, 9);
+      System.out.println();
+      printRange(2, 2);
+   }
+   public static void printRange(int start, int fin){
+      System.out.print(start);
+     
+     while (start < fin){
+         start++;
+         System.out.print(", " + start);
+      }
+     
+      while (start > fin){
+         start--;
+         System.out.print(", " + start);
+      }  
+   }
+}
+//5.2
+import java.util.*;
+public class MostSignificantDigit{
+   public static void main(String[] args){
+   Scanner c=new Scanner(System.in);
+   System.out.println("enter a number");
+   int num=c.nextInt();
+   int mostsig=MSB(num);
+   System.out.println("The Most Significant digit is "+mostsig);
+   }
+
+   public static int MSB(int n){
+      n = Math.abs(n); 
+      int lastdigit;          // handle negativesint sum = 0;
+      while (n >= 10) {
+         n = n / 10;            
+// remove last digit
+      }
+         return n;
+    }
+}
+//5.3
+class AllDigitsOdd{
+   public static void main(String[] args){
+      System.out.println(allDigitsOdd(12111));
+   }
+   public static boolean allDigitsOdd(int num){
+      int sub = 0;
+      num = Math.abs(num);
+      do{
+         sub = num % 10;
+         num = num / 10;
+      }while( num > 0 && sub % 2 == 1);
+      
+      return (sub % 2 == 1);
+      
+   }
+}
+//5.4
+class RevNum{
+   public static void main(String[] args){
+      System.out.println(revNum(2432433));
+   }
+   public static int revNum(int num){
+      int result = 0;
+      num = Math.abs(num);
+      while(num > 0){ 
+         result = (result* 10) + num % 10; 
+         num = num / 10;                           
+      }
+      return result;
+   }
+}
+
+//5.5
+class ZeroDigits{
+   public static void main(String[] args){
+      System.out.println("The number of zero digits are: " + zeroDigits(40000001));
+   }
+   public static int zeroDigits(int num){
+      int count = 0;
+      if (num == 0)
+         count++;
+      while(num > 0){
+         int sub = num % 10;
+         num = num / 10;
+         if (sub == 0)
+            count++;
+      }
+      return count;
+   }
+}
+//5.6
+import java.util.Scanner;
+class Annoy{
+   public static final int SENTINEL = 2;
+   
+   public static void main(String[] args){
+      Scanner c = new Scanner (System.in);
+      int sum = 0;
+      int num = 0;
+      do{
+         System.out.println("Enter a number!(enter 2 to exit): ");
+         sum = sum + num;
+         num = c.nextInt();
+         }while(!(num == SENTINEL));
+      System.out.println("Your total is: " + sum);
+   }
+}
+
+//while loop 5.6:
+import java.util.*;
+public class ReadSentinel{
+   public static void main(String[] args){
+    Scanner console = new Scanner(System.in);
+      int sum = 0;
+      // pull one prompt/read ("post") out of the loop
+      System.out.print("Enter a number (-1 to quit): ");
+      int number = console.nextInt();
+      while (number != -1){
+         sum = sum + number;
+         // moved to top of loop
+         System.out.print("Enter a number (-1 to quit): ");
+         number = console.nextInt();
+      }
+      System.out.println("The total is " + sum);
+   }
+ }
+//CW6.1 
+class IsPrime{
+   public static void main(String[] args){
+      int num = 7;
+      if (isPrime(num))
+      System.out.println("It is a prime number!");
+      else
+      System.out.println("It is NOT a prime number!");
+   }
+   public static boolean isPrime(int num){
+      int count = 0;
+      for (int i=1; i<=num; i++){
+         if (num % i == 0)
+            count++;
+      }
+      return(count == 2);
+   }
+}
+//6.1
+// Displays changes in temperature from data in an input file.
+import java.io.*;    // for File
+import java.util.*;  // for Scanner
+public class Temperatures3 {
+    public static void main(String[] args)
+            throws FileNotFoundException {
+        Scanner input = new Scanner(new File("weather2.txt"));
+        double prev = input.nextDouble();   // fencepost
+        while (input.hasNext()) {
+            if (input.hasNextDouble()) {
+                double next = input.nextDouble();
+                System.out.println(prev + " to " + next +
+                        ", change = " + (next - prev));
+                prev = next;
+            } else {
+                input.next();  // throw away unwanted token
+            }
+        }
+    }
+}
+//7.1
+//Reads temperatures from the user, computes average and # days above average.
+import java.util.*;
+public class Weather {
+   public static void main(String[] args) {
+      Scanner console = new Scanner(System.in);
+      System.out.print("How many days' temperatures? ");
+      int days = console.nextInt();
+      int[] temps = new int[days];        
+      // array to store days' temperatures
+      int sum = 0;
+      for (int i = 0; i < days; i++) {    
+      // read/store each day's temperature
+      System.out.print("Day " + (i + 1) + "'s high temp: ");
+      temps[i] = console.nextInt();
+      sum += temps[i];
+      }
+      double average = (double) sum / days;
+      int count = 0;                     
+       // see if each day is above average
+       for (int i = 0; i < days; i++) {
+         if (temps[i] > average) 
+            {count++;}
+       }// report results
+       System.out.printf("Average temp = %.1f\n", average);
+       System.out.println(count + " days above average");
+   }
+ }      

@@ -1,0 +1,53 @@
+USEFULL METHODS JAVA
+
+>>Reads all input from a txt file and returns a single string
+needs the following imports
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
+
+public static String readFileAsString(String fileName) throws IOException {
+	return new String(Files.readAllBytes(Paths.get(fileName)));
+}
+
+
+Closing a FileWriter
+
+It is important to close a FileWriter after using to avoid the resource leak. It is done by invoking the close method:
+
+writer.close();
+
+Since Java 7, the convenient way to close an object of FileWriter is to use the try-with-resources statement.
+
+File file = new File("/home/username/path/to/your/file.txt");
+ 
+try (FileWriter writer = new FileWriter(file)) {
+    writer.write("Hello, World");
+} catch (IOException e) {
+    System.out.printf("An exception occurs %s", e.getMessage());
+}
+
+It will close the writer automatically.
+
+
+
+
+Java doesnt include a ranged random function. Take the length of the range (max - min + 1) and then 
+shift that range over by the minimum (+min) to create this effect. 
+
+public class Randomizer {
+    
+    /**
+    * @param min - minimum range value
+    * @param max - maximum range value
+    * @return random integer between min (inclusive) to max (inclusive) with uniform probability
+    */    
+    public static int next(int min, int max) {
+        if (min >= max) {
+        	throw new IllegalArgumentException("max must be greater than min");
+        }
+
+        return (int)(Math.random() * ((max - min) + 1)) + min;
+    }
+
+}

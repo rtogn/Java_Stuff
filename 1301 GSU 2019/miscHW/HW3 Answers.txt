@@ -1,0 +1,125 @@
+Number 4:
+
+class HW3{
+    public static void main(String[] args){
+        for (int i = 1; i <= 4; i++){
+            
+            for (int j = 1; j <= 5; j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+    }
+}
+
+Output:
+*****
+*****
+*****
+*****
+
+Number 5:
+
+class HW3{
+    public static void main(String[] args){
+        for (int i = 1; i <= 5; i++){
+            
+            for (int j = 1; j <= i; j++){
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+
+    }
+}
+
+Output:
+
+*
+**
+***
+****
+*****
+
+Number 6:
+
+class HW3{
+    public static void main(String[] args){
+        for (int i = 1; i <= 7; i++){
+            
+            for (int j = 1; j <= i; j++){
+                System.out.print(i);
+            }
+            System.out.println();
+        }
+
+    }
+}
+
+Output:
+
+1
+22
+333
+4444
+55555
+666666
+7777777
+
+Number 7:
+
+class HW3{
+    public static void main(String[] args){
+        int count = 6;
+        for (int i = 1; i <= 5; i++){
+            count -= 1;
+            for (int j = 1; j <= count; j++){
+                System.out.print(" ");
+            }
+            System.out.print(i);
+            System.out.println();
+        }
+
+    }
+}
+
+
+Output:
+
+     1
+    2
+   3
+  4
+ 5
+
+
+
+Number 8:
+
+class HW3{
+    public static void main(String[] args){
+        int count = 6;
+        for (int i = 1; i <= 5; i++){
+            count -= 1;
+            for (int j = 1; j <= count; j++){
+                System.out.print(" ");
+            }
+            for (int j = 1; j <= i; j ++){
+                System.out.print(i);
+            }
+            //System.out.print(i);
+            System.out.println();
+        }
+
+    }
+}
+
+Output:
+
+     1
+    22
+   333
+  4444
+ 55555
+

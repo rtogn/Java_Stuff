@@ -1,0 +1,1 @@
+Playing with images in java. Disects a given image into rgb values etc 

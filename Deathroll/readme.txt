@@ -1,0 +1,2 @@
+Was trying to confirm some probabilities or something based on a stupid game where players bet an amount of money and roll
+within certain ranges. I was trying to compare to styles of play where one is more conservative vs more risky. 
